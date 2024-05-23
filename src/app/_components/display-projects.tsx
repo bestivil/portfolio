@@ -109,7 +109,7 @@ export default async function DisplayProjects() {
         
         <div className="hover:shadow-gray-400/2 mt-8 h-72 w-full rounded-xl bg-black hover:shadow-lg text-white hover:border-slate-400 ">
         
-        <p className="font-bold ml-5 mt-3 items-center justify-center ">Weather</p>
+        <p className="font-bold ml-5 mt-3 ">Weather</p>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 px-32 md:px-2 md:mt-0 min-w-5">
         {/* <!-- Empty Grid Items for positioning --> */}
