@@ -4,24 +4,21 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
-    .input(z.object({ text: z.string() }))
+    .input(z.object({ text: z.string(), int: z.number() }))
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: `Hello ${input.text}, the number is ${input.int}`,
+        location: '/posts',
       };
     }),
 
   create: publicProcedure
     .input(z.object({ name: z.string().min(1) }))
-    .mutation(async ({ ctx, input }) => {
-      // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    .query(({ input }) => {
 
-      return ctx.db.post.create({
-        data: {
+      return {
           name: input.name,
-        },
-      });
+      };
     }),
 
   getLatest: publicProcedure.query(({ ctx }) => {
