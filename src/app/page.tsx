@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CreatePost } from "~/app/_components/create-post";
 import { api } from "~/trpc/server";
 import DisplayProjects from "./_components/display-projects";
+import DisplayWeatherOverlay from "./_components/display-weather-overlay";
 
 export default async function Home() {
   // const hello = await api.post.hello({ text: "from tRPC", int: Math.random() });
