@@ -6,60 +6,66 @@ import { api } from "~/trpc/server";
 export default async function DisplayProjects() {
 
   return (
-    <div className="min-h-screen bg-slate-900 max-md:p-6">
+    <div className="min-h-screen bg-slate-900">
     <div className="container relative flex min-w-full flex-col justify-center overflow-hidden">
       <div className="h-18 flex w-full flex-row flex-nowrap gap-8 overflow-hidden p-8 lg:p-18">
         {/* <!-- Left Bar --> */}
-        <div className=" p-4 duration-450 fixed bottom-7 left-1/2 z-50 min-w-3/4 flex h-14 w-full max-w-[55%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[35%] 3xl:max-w-[25%] transform flex-row items-center justify-between rounded-3xl border-4 border-white/10 bg-slate-800 px-4 text-white shadow-2xl shadow-black/80 transition-all max-md:min-w-72 max-md:-translate-x-1/2 md:bottom-auto md:left-0 md:ml-5 md:w-3/4 md:px-14">
+        <div className=" p-4 duration-450 fixed bottom-7 left-1/2 z-50 min-w-3/4 flex h-14 w-full max-w-[50%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[35%] 3xl:max-w-[25%] transform flex-row items-center justify-between rounded-3xl border-4 border-white/10 bg-slate-800 px-4 text-white shadow-2xl shadow-black/80 transition-all max-md:min-w-72 max-md:-translate-x-1/2 md:bottom-auto md:left-0 md:ml-5 md:w-3/4 md:px-14">
           <div className="group flex flex-row items-center px-2 transition-transform hover:scale-110 md:px-5">
+            <a href="#me" className="flex flex-row">
             <div className="icon mr-2 md:mb-0 md:mr-2">
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c-5.083 0-8.465 4.949-3.733 13.678 1.596 2.945-1.725 3.641-5.09 4.418-3.073.709-3.187 2.235-3.177 4.904l.004 1h23.99l.004-.969c.012-2.688-.093-4.223-3.177-4.935-3.438-.794-6.639-1.49-5.09-4.418 4.719-8.912 1.251-13.678-3.731-13.678m0 1c1.89 0 3.39.764 4.225 2.15 1.354 2.251.866 5.824-1.377 10.06-.577 1.092-.673 2.078-.283 2.932.937 2.049 4.758 2.632 6.032 2.928 2.303.534 2.412 1.313 2.401 3.93h-21.998c-.01-2.615.09-3.396 2.401-3.93 1.157-.266 5.138-.919 6.049-2.94.387-.858.284-1.843-.304-2.929-2.231-4.115-2.744-7.764-1.405-10.012.84-1.412 2.353-2.189 4.259-2.189" /></svg>
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" style={{ fill: "#FFFFFF" }}><path d="M12 0c-5.083 0-8.465 4.949-3.733 13.678 1.596 2.945-1.725 3.641-5.09 4.418-3.073.709-3.187 2.235-3.177 4.904l.004 1h23.99l.004-.969c.012-2.688-.093-4.223-3.177-4.935-3.438-.794-6.639-1.49-5.09-4.418 4.719-8.912 1.251-13.678-3.731-13.678m0 1c1.89 0 3.39.764 4.225 2.15 1.354 2.251.866 5.824-1.377 10.06-.577 1.092-.673 2.078-.283 2.932.937 2.049 4.758 2.632 6.032 2.928 2.303.534 2.412 1.313 2.401 3.93h-21.998c-.01-2.615.09-3.396 2.401-3.93 1.157-.266 5.138-.919 6.049-2.94.387-.858.284-1.843-.304-2.929-2.231-4.115-2.744-7.764-1.405-10.012.84-1.412 2.353-2.189 4.259-2.189" /></svg>
             </div>
-            <span className="hidden min-[1100px]:block">Me</span>
+            </a>
+            <a href="#me" className="hidden min-[900px]:block">Me</a>
+            
           </div>
   
-          <div className="group flex items-center rounded-lg p-2 transition-transform hover:scale-110 md:p-5">
+          
+        <div className="group flex items-center gap-1 rounded-lg p-2 transition-transform hover:scale-110 md:p-5">
+            <a href="#publications" className="flex flex-row ">
             <div className="icon mr-2">
-              <svg className="h-24 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" style={{ fill: "#FFFFFF" }}><path d="M14 0v10l2-1.518 2 1.518v-10h4v24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h9zm6 20h-14.505c-1.375 0-1.375 2 0 2h14.505v-2z" /></svg>
             </div>
-            <span className="hidden min-[1100px]:block">Experience</span>
+            </a>
+            <a href="#publications" className="hidden min-[900px]:block">Publication</a>
           </div>
-  
+          
           <div className="group flex items-center rounded-lg p-2 transition-transform hover:scale-110 md:p-5">
+            <a href="#projects" className="flex flex-row">
             <div className="icon mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{ fill: "#FFFFFF" }}>
                 <path d="M1 9v-7h6c1.695 1.942 2.371 3 4 3h12v4h-22zm-1 2l2 11h20l2-11h-24z" />
               </svg>
             </div>
-            <span className="hidden min-[1100px]:block">Portfolio</span>
+             </a>
+             <a href="#projects" className="hidden min-[900px]:block">Projects</a>
           </div>
   
-          <div className="group flex items-center gap-1 rounded-lg p-2 transition-transform hover:scale-110 md:p-5">
-            <div className="icon mr-2">
-              <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 0v10l2-1.518 2 1.518v-10h4v24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h9zm6 20h-14.505c-1.375 0-1.375 2 0 2h14.505v-2z" /></svg>
-            </div>
-            <span className="hidden min-[1100px]:block">Publication</span>
-          </div>
+          
+
           <div className="lg:w-1/4 hidden xl:1/2 " ></div>
         </div>
   
         {/* <!-- Right Bars --> */}
         <div className="z-50 flex w-full justify-center space-x-2 md:w-full md:justify-end md:justify-items-end">
-          <div className="flex flex-row rounded-3xl bg-slate-700 shadow-lg shadow-black/80 md:fixed">
-            {/* <!-- GitHub Bar --> */}
+          <div className="flex flex-row rounded-3xl bg-slate-700 shadow-lg shadow-black/80 md:fixed max-md:gap-3">
+            {/* <!-- Email Bar --> */}
             <div className="flex flex-none items-center justify-center rounded-3xl p-4 text-black shadow-2xl">
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <a href="mailto:baestivil@gmail.com" target="_blank" rel="noreferrer">
+              <svg width="24" height="24" fill-rule="evenodd" clip-rule="evenodd" style={{ fill: "#FFFFFF" }}>
                 <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
               </svg>
+            </a>
             </div>
   
             {/* <!-- LinkedIn Bar --> */}
             <div className="flex flex-none items-center justify-center rounded-3xl p-4 text-black shadow-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <a href="https://www.linkedin.com/in/bruce-estivil/" target="_blank" rel="noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "#FFFFFF" }}>
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
+            </a>
             </div>
           </div>
         </div>
@@ -74,27 +80,31 @@ export default async function DisplayProjects() {
   
     {/* <!-- Tech Stack --> */}
     <div className=" flex min-w-28 items-center justify-center md:pt-32">
-      <div className=" flex-row flex justify-between w-full min-w-[30%] grid-cols-5 items-center md:gap-16 md:px-8 md:min-w-[60%] md:grid-cols-5 lg:justify-center">
+      <div className=" flex-row flex justify-between min-w-[40%] gap-4 grid-cols-5 items-center md:gap-16 md:px-8 md:min-w-[60%] md:grid-cols-5 lg:justify-center px-6">
         <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700">
+        <svg width="50%" height="50%" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_typescript_official</title><rect x="2" y="2" width="28" height="28" rx="1.312" style={{ fill:'#3178c6'}}></rect><path d="M18.245,23.759v3.068a6.492,6.492,0,0,0,1.764.575,11.56,11.56,0,0,0,2.146.192,9.968,9.968,0,0,0,2.088-.211,5.11,5.11,0,0,0,1.735-.7,3.542,3.542,0,0,0,1.181-1.266,4.469,4.469,0,0,0,.186-3.394,3.409,3.409,0,0,0-.717-1.117,5.236,5.236,0,0,0-1.123-.877,12.027,12.027,0,0,0-1.477-.734q-.6-.249-1.08-.484a5.5,5.5,0,0,1-.813-.479,2.089,2.089,0,0,1-.516-.518,1.091,1.091,0,0,1-.181-.618,1.039,1.039,0,0,1,.162-.571,1.4,1.4,0,0,1,.459-.436,2.439,2.439,0,0,1,.726-.283,4.211,4.211,0,0,1,.956-.1,5.942,5.942,0,0,1,.808.058,6.292,6.292,0,0,1,.856.177,5.994,5.994,0,0,1,.836.3,4.657,4.657,0,0,1,.751.422V13.9a7.509,7.509,0,0,0-1.525-.4,12.426,12.426,0,0,0-1.9-.129,8.767,8.767,0,0,0-2.064.235,5.239,5.239,0,0,0-1.716.733,3.655,3.655,0,0,0-1.171,1.271,3.731,3.731,0,0,0-.431,1.845,3.588,3.588,0,0,0,.789,2.34,6,6,0,0,0,2.395,1.639q.63.26,1.175.509a6.458,6.458,0,0,1,.942.517,2.463,2.463,0,0,1,.626.585,1.2,1.2,0,0,1,.23.719,1.1,1.1,0,0,1-.144.552,1.269,1.269,0,0,1-.435.441,2.381,2.381,0,0,1-.726.292,4.377,4.377,0,0,1-1.018.105,5.773,5.773,0,0,1-1.969-.35A5.874,5.874,0,0,1,18.245,23.759Zm-5.154-7.638h4V13.594H5.938v2.527H9.92V27.375h3.171Z" style={{ fill:'#ffffff'}}></path></g></svg>
           
         </div>
         <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700">
+            <svg fill="#000000" width="50%" height="50%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>python</title> <path d="M19.212 26.447l-0.287 0.412-0.1 0.512 0.1 0.512 0.287 0.412 0.412 0.287 0.512 0.1 0.512-0.1 0.412-0.287 0.287-0.412 0.1-0.512-0.1-0.512-0.287-0.412-0.412-0.287-0.512-0.1-0.512 0.1zM27.297 8.64l0.35 0.075 0.4 0.15 0.437 0.225 0.45 0.337 0.45 0.437 0.437 0.587 0.4 0.737 0.35 0.912 0.262 1.1 0.175 1.3 0.062 1.537-0.075 1.537-0.2 1.3-0.3 1.075-0.4 0.887-0.45 0.712-0.5 0.562-0.525 0.412-0.525 0.3-0.5 0.2-0.45 0.112-0.4 0.062-0.3 0.025-0.2-0.012h-10.272v1.025h7.298l0.012 3.449 0.025 0.45-0.062 0.425-0.137 0.387-0.212 0.362-0.312 0.312-0.387 0.3-0.475 0.25-0.55 0.212-0.637 0.187-0.725 0.162-0.8 0.112-0.887 0.087-0.962 0.050-1.050 0.012-1.587-0.050-1.337-0.175-1.125-0.25-0.912-0.312-0.737-0.375-0.562-0.412-0.425-0.425-0.312-0.425-0.2-0.412-0.125-0.375-0.050-0.312-0.025-0.25 0.012-0.162v-6.673l0.063-0.8 0.162-0.675 0.262-0.575 0.325-0.475 0.375-0.4 0.412-0.3 0.437-0.25 0.437-0.175 0.412-0.125 0.375-0.075 0.325-0.050 0.262-0.025 0.162-0.012h7.298l0.862-0.062 0.737-0.175 0.625-0.262 0.512-0.35 0.412-0.4 0.337-0.437 0.25-0.45 0.187-0.45 0.125-0.437 0.087-0.4 0.050-0.35 0.025-0.262v-3.824h2.612l0.175 0.012zM10.939 3.704l-0.287 0.412-0.1 0.512 0.1 0.512 0.287 0.425 0.412 0.275 0.512 0.112 0.512-0.113 0.412-0.275 0.287-0.425 0.1-0.512-0.1-0.512-0.287-0.412-0.412-0.275-0.512-0.112-0.512 0.112zM18.812 1.229l1.125 0.25 0.912 0.325 0.737 0.375 0.562 0.4 0.425 0.425 0.312 0.425 0.2 0.412 0.125 0.375 0.050 0.325 0.025 0.25-0.012 0.162v6.673l-0.062 0.787-0.162 0.687-0.262 0.575-0.325 0.475-0.375 0.387-0.412 0.312-0.437 0.237-0.437 0.175-0.412 0.125-0.375 0.087-0.325 0.050-0.263 0.025h-7.46l-0.862 0.062-0.737 0.175-0.625 0.275-0.512 0.337-0.412 0.4-0.337 0.437-0.25 0.45-0.187 0.462-0.125 0.437-0.087 0.4-0.050 0.337-0.025 0.262v3.824h-2.787l-0.262-0.037-0.35-0.087-0.4-0.15-0.437-0.225-0.45-0.325-0.45-0.45-0.437-0.575-0.4-0.737-0.35-0.912-0.262-1.1-0.175-1.312-0.062-1.537 0.075-1.524 0.2-1.3 0.3-1.087 0.4-0.887 0.45-0.712 0.5-0.55 0.525-0.412 0.525-0.3 0.5-0.2 0.45-0.125 0.4-0.062 0.3-0.012h0.2l0.075 0.012h10.197v-1.037h-7.298l-0.012-3.436-0.025-0.462 0.062-0.425 0.137-0.387 0.212-0.35 0.312-0.325 0.387-0.287 0.475-0.25 0.55-0.225 0.637-0.187 0.725-0.15 0.8-0.125 0.887-0.075 0.962-0.050 1.050-0.025 1.587 0.063z"></path> </g></svg>
         </div>
-        <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700"></div>
-        <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700"></div>
-        <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700"></div>
+        <div className="flex h-16 w-16 md:w-24 md:h-24 items-center justify-center rounded-lg bg-slate-700">
+            <svg width="50%" height="50%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0497 8.44062C22.6378 3.32607 19.2566 0 19.2566 0C19.7598 5.28738 13.813 6.53583 12.2189 10.1692C11.1312 12.6485 12.9638 14.8193 16.0475 17.5554C15.7749 16.9494 15.3544 16.3606 14.9288 15.7645C13.4769 13.7313 11.9645 11.6132 16.0497 8.44062Z" fill="#E76F00"></path> <path d="M17.1015 18.677C17.1015 18.677 19.0835 17.0779 17.5139 15.3008C12.1931 9.27186 23.3333 6.53583 23.3333 6.53583C16.5317 9.8125 17.5471 11.7574 19.2567 14.1202C21.0871 16.6538 17.1015 18.677 17.1015 18.677Z" fill="#E76F00"></path> <path d="M22.937 23.4456C29.0423 20.3258 26.2195 17.3278 24.2492 17.7317C23.7662 17.8305 23.5509 17.9162 23.5509 17.9162C23.5509 17.9162 23.7302 17.64 24.0726 17.5204C27.9705 16.1729 30.9682 21.4949 22.8143 23.6028C22.8143 23.6029 22.9088 23.5198 22.937 23.4456Z" fill="#5382A1"></path> <path d="M10.233 19.4969C6.41312 18.9953 12.3275 17.6139 12.3275 17.6139C12.3275 17.6139 10.0307 17.4616 7.20592 18.8043C3.86577 20.3932 15.4681 21.1158 21.474 19.5625C22.0984 19.1432 22.9614 18.7798 22.9614 18.7798C22.9614 18.7798 20.5037 19.2114 18.0561 19.4145C15.0612 19.6612 11.8459 19.7093 10.233 19.4969Z" fill="#5382A1"></path> <path d="M11.6864 22.4758C9.55624 22.2592 10.951 21.2439 10.951 21.2439C5.43898 23.0429 14.0178 25.083 21.7199 22.8682C20.9012 22.5844 20.3806 22.0653 20.3806 22.0653C16.6163 22.7781 14.441 22.7553 11.6864 22.4758Z" fill="#5382A1"></path> <path d="M12.6145 25.6991C10.486 25.4585 11.7295 24.7474 11.7295 24.7474C6.72594 26.1222 14.7729 28.9625 21.1433 26.2777C20.0999 25.8787 19.3528 25.4181 19.3528 25.4181C16.5111 25.9469 15.1931 25.9884 12.6145 25.6991Z" fill="#5382A1"></path> <path d="M25.9387 27.3388C25.9387 27.3388 26.8589 28.0844 24.9252 28.6612C21.2481 29.7566 9.62093 30.0874 6.39094 28.7049C5.22984 28.2082 7.40723 27.5189 8.09215 27.3742C8.80646 27.2219 9.21466 27.2503 9.21466 27.2503C7.9234 26.3558 0.868489 29.0067 5.63111 29.7659C18.6195 31.8372 29.3077 28.8331 25.9387 27.3388Z" fill="#5382A1"></path> <path d="M28 28.9679C27.7869 31.6947 18.7877 32.2683 12.9274 31.8994C9.10432 31.6583 8.33812 31.0558 8.32691 31.047C11.9859 31.6402 18.1549 31.7482 23.1568 30.8225C27.5903 30.0016 28 28.9679 28 28.9679Z" fill="#5382A1"></path> </g></svg>
+        </div>
+        
       </div>
     </div>
   
     {/* <!-- About and Experience and Technical --> */}
-    <div className="grid-row-2 auto-cols-auto mt-96 grid gap-4 lg:items-center lg:justify-center w-full border ">
+    <div id ="me" className="grid-row-2 auto-cols-auto mt-40 pt-40 grid gap-4 lg:items-center lg:justify-center w-full ">
       <div className="flex h-full w-full flex-row gap-2 max-md:flex-col md:justify-center ">
         <div className="h-full md:w-2/4">
-          <div className="h-full rounded-xl bg-slate-500 shadow-lg max-md:w-full">
+          <div className="h-full rounded-xl bg-slate-500 shadow-lg max-md:w-full pb-4">
             <div className="flex flex-col items-center pt-4">
               <span className="pb-4 text-2xl font-bold text-white">About</span>
             </div>
-            <div className="flex rounded-lg bg-yellow-50"></div>
+            <span className="flex px-5 pt-6 font-normal text-white">• Mentor A-level Computer Science students</span>
+            <span className="flex px-7 text-sm text-white">(Black Excellence Network)</span>
           </div>
         </div>
         <div className="h-full rounded-xl bg-slate-700 pb-4 shadow-lg md:w-2/4">
@@ -165,12 +175,12 @@ export default async function DisplayProjects() {
       </div>
   
       {/* <!-- Publication --> */}
-      <div className="flex flex-col">
-        <p className="m-6 pt-16 pb-4 text-3xl font-bold text-white">Publications</p>
+      <div id ="publications" className="flex flex-col">
+        <p className="m-6 pt-24 pb-4 text-3xl font-bold text-white">Publications</p>
         <div className="hover:shadow-gray-400/2 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 text-white hover:border-slate-400 hover:shadow-lg">
           <div className="flex-col pt-4 max-md:justify-center md:flex-row">
             <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
-              <span className=" font-bold flex items-center justify-center p-3 text-md">Thesis: Exploring Delay Tolerant Networks in New York's subway system</span>
+              <span className=" font-bold flex items-center justify-center p-3 px-10 text-md">Thesis: Exploring Delay Tolerant Networks in New York's subway system</span>
               <div className="bflex w-full flex-row items-center justify-center">
                 <span className="flex items-center justify-center md:justify-end md:pr-4"
                   >Built with:
@@ -209,7 +219,8 @@ export default async function DisplayProjects() {
           <div className="flex flex-row items-end justify-end gap-3 p-2">
             <div className="md:w-11/12"></div>
   
-            <button className="group relative flex h-11 w-1/2 md:w-1/4 items-center justify-center rounded-md bg-slate-100 p-4 text-black shadow-md">
+            <a href="https://scholar.google.com/citations?hl=en&user=ebQQOzIAAAAJ" className="relative flex flex-row h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black  md:w-1/4" target="_blank" rel="noreferrer">
+            <button className="group relative flex h-11 w-1/2 md:w-1/4 items-center justify-center rounded-md bg-slate-100 p-4 text-black ">
               <div className="flex items-center justify-center gap-3">
                 <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -219,13 +230,16 @@ export default async function DisplayProjects() {
                 <span className="items-center text-xs">Google Scholar</span>
               </div>
             </button>
+            </a>
   
-            <button className="relative flex h-11 w-1/2 items-center justify-center rounded-md bg-slate-100 p-4 text-black shadow-md">
+            <a href="https://arxiv.org/pdf/2405.02647" className="group relative flex flex-row h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black  md:w-1/4" target="_blank" rel="noreferrer">
+            <button className="relative flex h-11 w-1/2 items-center justify-center rounded-md bg-slate-100 p-4 text-black">
               <div className="flex items-center justify-center gap-2">
                 <span className="items-center text-sm">Read</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z" /></svg>
               </div>
             </button>
+            </a>
           </div>
         </div>
       </div>
@@ -233,10 +247,10 @@ export default async function DisplayProjects() {
       {/* <!-- Projects --> */}
   
       <div className="flex flex-col ">
-        <p className="m-6 pt-16 pb-4 text-3xl font-bold text-white">Projects</p>
+        <p className="m-6 pt-80 md:pt-96 pb-4 text-3xl font-bold text-white">Projects</p>
   
         {/* <!-- Project 1 --> */}
-        <div className="hover:shadow-gray-400/2 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 text-white hover:border-slate-400 hover:shadow-lg mb-4">
+        <div id ="projects" className="hover:shadow-gray-400/2 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 text-white hover:border-slate-400 hover:shadow-lg mb-4">
           <div className="flex-col p-5 max-md:justify-center md:flex-row">
             <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
               <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">Game Development</span>
@@ -274,7 +288,8 @@ export default async function DisplayProjects() {
           <div className="flex flex-row items-end justify-end p-2">
             <div className="md:w-5/6"></div>
   
-            <button className="relative flex h-11 w-full items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black shadow-md md:w-1/3">
+            <a href="https://github.com/bestivil/COMP4024-CosmicWordQuest" className="relative flex flex-row h-11 w-full items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black shadow-md md:w-1/3" target="_blank" rel="noreferrer">
+            <button className="flex flex-row items-center justify-center gap-2">
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
@@ -282,6 +297,7 @@ export default async function DisplayProjects() {
                 <span className="items-center text-sm">GitHub</span>
               </div>
             </button>
+            </a>
   
             
           </div>
@@ -306,7 +322,7 @@ export default async function DisplayProjects() {
                     </g>
                   </svg>
                   {/* <!-- TailwindCSS SVG --> */}
-                  <svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                  <svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style={{fill: "#44a8b3"}}>
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
@@ -333,7 +349,7 @@ export default async function DisplayProjects() {
           <div className="flex flex-row items-end justify-end gap-3 p-2">
             <div className="md:w-11/12"></div>
   
-            <button className="relative flex h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black shadow-md md:w-1/4">
+            <button className="relative flex h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100/5 p-4 text-black md:w-1/4">
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
@@ -342,7 +358,8 @@ export default async function DisplayProjects() {
               </div>
             </button>
   
-            <button className="group relative flex h-11 w-1/2 items-center justify-center rounded-md bg-slate-100 p-4 text-black shadow-md">
+            <a href="https://react-weather-application-zeta.vercel.app/" className="group relative flex flex-row h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black md:w-1/4" target="_blank" rel="noreferrer">
+            <button className=" relative flex h-11 w-1/2 items-center justify-center rounded-md bg-slate-100 p-4 text-black ">
               <div className="flex items-center justify-center">
                 <span className="items-center text-sm">Visit</span>
                 <div className="group-hover:-rotate-45">
@@ -352,9 +369,10 @@ export default async function DisplayProjects() {
                 </div>
               </div>
             </button>
+            </a>
           </div>
         </div>
-        <div className="pt-40 md:hidden"></div>
+        <div className="pt-40 md:pt-24"></div>
       </div>
     </div>
   </div>
