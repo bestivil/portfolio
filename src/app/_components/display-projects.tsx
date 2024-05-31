@@ -8,9 +8,9 @@ export default async function DisplayProjects() {
   return (
     <div className="min-h-screen bg-slate-900">
     <div className="container relative flex min-w-full flex-col justify-center overflow-hidden">
-      <div className="h-18 flex w-full flex-row flex-nowrap gap-8 overflow-hidden p-8 lg:p-18">
+      <div className="h-18 min-[300px]:flex w-full flex-row flex-nowrap gap-8 overflow-hidden p-8 lg:p-18 hidden ">
         {/* <!-- Left Bar --> */}
-        <div className=" p-4 duration-450 fixed bottom-7 left-1/2 z-50 min-w-3/4 flex h-14 w-full max-w-[50%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[35%] 3xl:max-w-[25%] transform flex-row items-center justify-between rounded-3xl border-4 border-white/10 bg-slate-800 px-4 text-white shadow-2xl shadow-black/80 transition-all max-md:min-w-72 max-md:-translate-x-1/2 md:bottom-auto md:left-0 md:ml-5 md:w-3/4 md:px-14">
+        <div className=" p-4 duration-450 fixed bottom-7 left-1/2 z-50 min-w-3/4 flex h-14 w-full max-w-[50%] lg:max-w-[55%] xl:max-w-[45%] 2xl:max-w-[35%] 3xl:max-w-[25%] transform flex-row items-center justify-between rounded-3xl border-4 border-white/10 bg-slate-800 px-4 text-white shadow-2xl shadow-black/80 transition-all max-md:min-w-72 max-md:-translate-x-1/2 md:bottom-auto md:left-0 md:ml-5 md:w-3/4 md:px-14 ">
           <div className="group flex flex-row items-center px-2 transition-transform hover:scale-110 md:px-5">
             <a href="#me" className="flex flex-row">
             <div className="icon mr-2 md:mb-0 md:mr-2">
@@ -74,7 +74,7 @@ export default async function DisplayProjects() {
   
     {/* <!-- Hero Section --> */}
     <div className=" flex h-40 flex-col items-center justify-center gap-4 mb-32 mt-60">
-      <div className="lg:text-8xl rounded-lg bg-yellow-300 px-32 py-2 text-center text-6xl font-extrabold text-black">Bruce Estivil</div>
+      <div className="lg:text-8xl rounded-lg bg-yellow-300 md:px-32 max:md:w-full md:py-2 p-4 text-center text-6xl font-extrabold text-black ">Bruce Estivil</div>
       <div className="rounded-lg lg:text-3xl bg-yellow-300 px-4 py-2 text-center text-lg text-black">Full-stack Developer</div>
     </div>
   
@@ -96,8 +96,8 @@ export default async function DisplayProjects() {
     </div>
   
     {/* <!-- About and Experience and Technical --> */}
-    <div id ="me" className="grid-row-2 auto-cols-auto mt-40 pt-40 grid gap-4 lg:items-center lg:justify-center w-full ">
-      <div className="flex h-full w-full flex-row gap-2 max-md:flex-col md:justify-center ">
+    <div id ="me" className="grid-row-2 mt-40 pt-40 md:grid gap-4 lg:items-center lg:justify-center w-full">
+      <div className="flex h-full w-full flex-row gap-2 max-md:flex-col md:justify-center">
         <div className="h-full md:w-2/4">
           <div className="h-full rounded-xl bg-slate-500 shadow-lg max-md:w-full pb-4">
             <div className="flex flex-col items-center pt-4">
@@ -122,7 +122,7 @@ export default async function DisplayProjects() {
       </div>
   
       {/* <!-- Technical Skills --> */}
-      <div className="flex flex-col items-center gap-2 md:min-h-96 lg:justify-center">
+      <div className="flex flex-col items-center gap-2 md:min-h-96 lg:justify-center pt-2">
         <div className="h-full min-h-96 w-full rounded-xl bg-slate-400 pt-6 shadow-lg lg:items-center lg:justify-center">
           <div className="flex justify-center text-4xl font-bold">Technical Skills</div>
           {/* <!-- 1st Row --> */}
@@ -255,7 +255,7 @@ export default async function DisplayProjects() {
             <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
               <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">Game Development</span>
               <div className="flex w-full flex-col items-center justify-center md:items-end ">
-                <span className="flex items-center justify-center "
+                <span className="flex items-center justify-center max-sm:flex-col "
                   >Built with:
                   <div className="w-4"></div>
                   <svg height="45" preserveAspectRatio="xMidYMid" viewBox="0 -1.428 255.582 290.108" width="45" xmlns="http://www.w3.org/2000/svg">
@@ -309,7 +309,7 @@ export default async function DisplayProjects() {
             <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
               <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">Weather</span>
               <div className="flex w-full flex-row items-center justify-center md:justify-end md:pr-4">
-                <span className="flex items-center justify-center"
+                <span className="flex items-center justify-center max-sm:flex-col"
                   >Built with:
                   <div className="w-4"></div>
                   {/* <!-- React SVG --> */}
