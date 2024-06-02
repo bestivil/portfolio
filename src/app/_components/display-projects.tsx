@@ -116,7 +116,7 @@ export default async function DisplayProjects() {
             <span className="flex px-5 pb-4 font-mono text-sm font-light text-white">Software Engineer</span>
   
             <span className="flex px-5 font-semibold text-white">University of Nottingham</span>
-            <span className="flex px-5 font-mono text-sm text-white">MSc Computer Science</span>
+            <span className="flex px-5 font-mono text-sm text-white">(MSc) Computer Science</span>
           </div>
         </div>
       </div>
