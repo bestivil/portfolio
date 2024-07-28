@@ -1,14 +1,10 @@
-import Link from "next/link";
-
-import { CreatePost } from "~/app/_components/create-post";
-import { api } from "~/trpc/server";
 import Navigation from "../split/navigation";
 import HeroSection from "../split/hero-section";
 import TechIcons from "../split/tech-stack-icons";
 import About from "../split/about-section";
-import TechSkils from "../split/technical-skills";
 import Projects1, { Projects2 } from "../split/projects";
 import Publications from "../split/publications";
+import TechSkills from "../split/technical-skills";
 
 export default async function DisplayProjects() {
   return (
@@ -26,7 +22,7 @@ export default async function DisplayProjects() {
       >
         <About />
 
-        <TechSkils />
+        <TechSkills />
 
         {/* <!-- Publication --> */}
         <Publications />
