@@ -8,6 +8,7 @@ import {
   UnityIcon,
   VisitArrow,
 } from "../_components/icons";
+import React from "react";
 
 export interface CardProps {
   title: string;
@@ -64,7 +65,7 @@ export function ProjectBuiltWith(icons: any[]) {
       <span className="flex items-center justify-center max-sm:flex-col">
         Built with:
         <div className="w-4"></div>
-        {icons.map((item, index) => item)}
+        {icons.map((item, index) => React.cloneElement(item, { key: index }))}
       </span>
     </div>
   );
@@ -74,9 +75,12 @@ export function ProjectDescriptions(text: string[]) {
   return (
     <div className="flex p-2">
       <div className="flex w-full flex-col px-3 py-4">
-        {text.map((item, index) => (
-          <span className="text-semibold text-md">• {item}</span>
-        ))}
+        {text.map((item, index) =>
+          React.cloneElement(
+            <span className="text-semibold text-md">• {item}</span>,
+            { key: index },
+          ),
+        )}
       </div>
     </div>
   );
