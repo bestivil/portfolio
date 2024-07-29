@@ -6,11 +6,12 @@ export default function About() {
           <div className="flex flex-col items-center pt-4">
             <span className="pb-4 text-2xl font-bold text-white">About</span>
           </div>
-          <span className="flex px-5 pt-6 font-normal text-white">
-            • Mentor A-level Computer Science students
+          <span className="flex px-5 pt-6 text-sm font-normal text-white">
+            • Mentoring Computer Science students through projects
           </span>
+          <span className="flex px-7 text-sm text-white">• (Tech Cadets)</span>
           <span className="flex px-7 text-sm text-white">
-            (Black Excellence Network)
+            • (Black Excellence Network)
           </span>
         </div>
       </div>

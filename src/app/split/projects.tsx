@@ -1,3 +1,4 @@
+import { ButtonIcon } from "../_components/button-with-icon";
 import {
   CSharpIcon,
   GitHubIcon,
@@ -5,127 +6,107 @@ import {
   TailwindIcon,
   UnityIcon,
   VisitArrow,
-} from "../svg/icons";
+} from "../_components/icons";
 
-export default function Projects1() {
+export interface CardProps {
+  title: string;
+  icons: any[];
+  descrptions: string[];
+  githublink?: string;
+  websitelink?: string;
+}
+
+const Project1: CardProps = {
+  title: "Game Development",
+  icons: [<CSharpIcon />, <UnityIcon />],
+  descrptions: [
+    "Led group project through software development lifecycle.",
+    "Leveraged Trello to organise weekly sprints.",
+  ],
+  githublink: "https://github.com/bestivil/COMP4024-CosmicWordQuest",
+};
+
+const Project2: CardProps = {
+  title: "Weather",
+  icons: [<ReactIcon />, <TailwindIcon />],
+  descrptions: [
+    "Fully responsive design, favourite locations, and advanced metrics.",
+    "Integrated API's using Express.js",
+  ],
+  websitelink: "https://react-weather-application-zeta.vercel.app/",
+};
+
+const ProjectOrder = [Project1, Project2];
+
+export function Project(object: CardProps) {
   return (
-    <div
-      id="projects"
-      className="hover:shadow-gray-400/2 mb-4 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 text-white hover:border-slate-400 hover:shadow-lg"
-    >
-      <div className="flex-col p-5 max-md:justify-center md:flex-row">
-        <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
-          <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">
-            Game Development
-          </span>
-          <div className="flex w-full flex-col items-center justify-center md:items-end ">
-            <span className="flex items-center justify-center max-sm:flex-col ">
-              Built with:
-              <div className="w-4"></div>
-              <CSharpIcon />
-              <UnityIcon />
-            </span>
-          </div>
-        </div>
-
-        <div className="flex p-2">
-          <div className="flex w-full flex-col px-3 py-4">
-            <span className="text-semibold text-md">
-              • Led group project through software development lifecycle.{" "}
-            </span>
-            <span className="text-semibold text-md">
-              • Leveraged Trello to organise weekly sprints.{" "}
-            </span>
-          </div>
-        </div>
+    <>
+      <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
+        {ProjectTitle(object.title)} {ProjectBuiltWith(object.icons)}
       </div>
+      <div> {ProjectDescriptions(object.descrptions)} </div>
+    </>
+  );
+}
 
-      <div className="flex w-full  flex-1 flex-col max-md:px-32 md:mt-0 md:flex-row md:px-2">
-        <div className="flex-1"></div>
-      </div>
+export function ProjectTitle(name: string) {
+  return (
+    <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">
+      {name}
+    </span>
+  );
+}
 
-      <div className="flex flex-row items-end justify-end p-2">
-        <div className="md:w-5/6"></div>
+export function ProjectBuiltWith(icons: any[]) {
+  return (
+    <div className="flex w-full flex-row items-center justify-center md:justify-end md:pr-4">
+      <span className="flex items-center justify-center max-sm:flex-col">
+        Built with:
+        <div className="w-4"></div>
+        {icons.map((item, index) => item)}
+      </span>
+    </div>
+  );
+}
 
-        <a
-          href="https://github.com/bestivil/COMP4024-CosmicWordQuest"
-          className="relative flex h-11 w-full flex-row items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black shadow-md md:w-1/3"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button className="flex flex-row items-center justify-center gap-2">
-            <GitHubIcon />
-            <div className="flex items-center justify-center gap-2">
-              <span className="items-center text-sm">GitHub</span>
-            </div>
-          </button>
-        </a>
+export function ProjectDescriptions(text: string[]) {
+  return (
+    <div className="flex p-2">
+      <div className="flex w-full flex-col px-3 py-4">
+        {text.map((item, index) => (
+          <span className="text-semibold text-md">• {item}</span>
+        ))}
       </div>
     </div>
   );
 }
 
-export function Projects2() {
+export function ProjectsBoilerplate() {
   return (
-    <div className="hover:shadow-gray-400/2 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 text-white hover:border-slate-400 hover:shadow-lg">
-      <div className="flex-col pt-4 max-md:justify-center md:flex-row">
-        <div className="flex w-full flex-col items-center justify-center px-3 pb-6 md:flex-row">
-          <span className="text-semibold flex w-3/4 items-center justify-center p-3 text-2xl">
-            Weather
-          </span>
-          <div className="flex w-full flex-row items-center justify-center md:justify-end md:pr-4">
-            <span className="flex items-center justify-center max-sm:flex-col">
-              Built with:
-              <div className="w-4"></div>
-              <ReactIcon />
-              <TailwindIcon />
-            </span>
+    <>
+      {ProjectOrder.map((item, index) => (
+        <div className="hover:shadow-gray-400/2 mt-8 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 p-4 text-white hover:border-slate-400 hover:shadow-lg">
+          <div className="flex-col pt-4 max-md:justify-center md:flex-row">
+            {Project(item)}
+          </div>
+
+          <div className="flex w-full flex-1 flex-col gap-3 max-md:px-32 md:mt-0 md:flex-row md:px-2">
+            <div className="flex-1"></div>
+          </div>
+
+          <div className="flex flex-row items-end justify-end gap-3 p-2">
+            <div className="md:w-11/12"></div>
+
+            {item.githublink
+              ? ButtonIcon(item.githublink, "GitHub", <GitHubIcon />)
+              : undefined}
+
+            {item.websitelink
+              ? ButtonIcon(item.websitelink, "Visit", <VisitArrow />)
+              : undefined}
           </div>
         </div>
-
-        <div className="flex p-2">
-          <div className="flex w-full flex-col px-8 py-4">
-            <span className="text-semibold text-md">
-              • Fully responsive design, favourite locations, and advanced
-              metrics.{" "}
-            </span>
-            <span className="text-semibold text-md">
-              • Integrated API's using Express.js{" "}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex w-full flex-1 flex-col gap-3 max-md:px-32 md:mt-0 md:flex-row md:px-2">
-        <div className="flex-1"></div>
-      </div>
-
-      <div className="flex flex-row items-end justify-end gap-3 p-2">
-        <div className="md:w-11/12"></div>
-
-        <button className="relative flex h-11 w-1/2 items-center justify-center gap-2 rounded-md bg-slate-100/5 p-4 text-black md:w-1/4">
-          <GitHubIcon />
-          <div className="flex items-center justify-center gap-2">
-            <span className="items-center text-sm">GitHub</span>
-          </div>
-        </button>
-
-        <a
-          href="https://react-weather-application-zeta.vercel.app/"
-          className="group relative flex h-11 w-1/2 flex-row items-center justify-center gap-2 rounded-md bg-slate-100 p-4 text-black md:w-1/4"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button className=" relative flex h-11 w-1/2 items-center justify-center rounded-md bg-slate-100 p-4 text-black ">
-            <div className="flex items-center justify-center">
-              <span className="items-center text-sm">Visit</span>
-              <div className="group-hover:-rotate-45">
-                <VisitArrow />
-              </div>
-            </div>
-          </button>
-        </a>
-      </div>
-    </div>
+      ))}
+    </>
   );
 }

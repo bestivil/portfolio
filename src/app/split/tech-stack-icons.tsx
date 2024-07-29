@@ -1,4 +1,4 @@
-import { JavaIcon, PythonIcon, TypeScriptIcon } from "../svg/icons";
+import { JavaIcon, PythonIcon, TypeScriptIcon } from "../_components/icons";
 
 export default function TechIcons() {
   const icons = [<TypeScriptIcon />, <PythonIcon />, <JavaIcon />];
