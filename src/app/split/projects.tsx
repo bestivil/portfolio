@@ -20,7 +20,10 @@ export interface CardProps {
 
 const Project1: CardProps = {
   title: "Game Development",
-  icons: [<CSharpIcon />, <UnityIcon />],
+  icons: [
+    React.cloneElement(<CSharpIcon />, { key: 1 }),
+    React.cloneElement(<UnityIcon />, { key: 2 }),
+  ],
   descrptions: [
     "Led group project through software development lifecycle.",
     "Leveraged Trello to organise weekly sprints.",
@@ -30,7 +33,10 @@ const Project1: CardProps = {
 
 const Project2: CardProps = {
   title: "Weather",
-  icons: [<ReactIcon />, <TailwindIcon />],
+  icons: [
+    React.cloneElement(<ReactIcon />, { key: 1 }),
+    React.cloneElement(<TailwindIcon />, { key: 2 }),
+  ],
   descrptions: [
     "Fully responsive design, favourite locations, and advanced metrics.",
     "Integrated API's using Express.js",
@@ -89,29 +95,32 @@ export function ProjectDescriptions(text: string[]) {
 export function ProjectsBoilerplate() {
   return (
     <>
-      {ProjectOrder.map((item, index) => (
-        <div className="hover:shadow-gray-400/2 mt-8 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 p-4 text-white hover:border-slate-400 hover:shadow-lg">
-          <div className="flex-col pt-4 max-md:justify-center md:flex-row">
-            {Project(item)}
-          </div>
+      {ProjectOrder.map((item, index) =>
+        React.cloneElement(
+          <div className="hover:shadow-gray-400/2 mt-8 flex h-full w-full flex-col justify-between rounded-2xl bg-slate-950 p-4 text-white hover:border-slate-400 hover:shadow-lg">
+            <div className="flex-col pt-4 max-md:justify-center md:flex-row">
+              {Project(item)}
+            </div>
 
-          <div className="flex w-full flex-1 flex-col gap-3 max-md:px-32 md:mt-0 md:flex-row md:px-2">
-            <div className="flex-1"></div>
-          </div>
+            <div className="flex w-full flex-1 flex-col gap-3 max-md:px-32 md:mt-0 md:flex-row md:px-2">
+              <div className="flex-1"></div>
+            </div>
 
-          <div className="flex flex-row items-end justify-end gap-3 p-2">
-            <div className="md:w-11/12"></div>
+            <div className="flex flex-row items-end justify-end gap-3 p-2">
+              <div className="md:w-11/12"></div>
 
-            {item.githublink
-              ? ButtonIcon(item.githublink, "GitHub", <GitHubIcon />)
-              : undefined}
+              {item.githublink
+                ? ButtonIcon(item.githublink, "GitHub", <GitHubIcon />)
+                : undefined}
 
-            {item.websitelink
-              ? ButtonIcon(item.websitelink, "Visit", <VisitArrow />)
-              : undefined}
-          </div>
-        </div>
-      ))}
+              {item.websitelink
+                ? ButtonIcon(item.websitelink, "Visit", <VisitArrow />)
+                : undefined}
+            </div>
+          </div>,
+          { key: index },
+        ),
+      )}
     </>
   );
 }

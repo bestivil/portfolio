@@ -1,3 +1,4 @@
+import React from "react";
 import { ButtonIcon } from "../_components/button-with-icon";
 import { GScholarIcon, JavaIcon, PDFIcon } from "../_components/icons";
 import { Project, CardProps } from "./projects";
@@ -5,7 +6,7 @@ import { Project, CardProps } from "./projects";
 const Publication1: CardProps = {
   title:
     "Thesis: Exploring Delay Tolerant Networks in New York's subway system",
-  icons: [<JavaIcon />],
+  icons: [React.cloneElement(<JavaIcon />, { key: 1 })],
   descrptions: [
     "Evaluated pseudo-realistic traces to evaluate network protocols.",
     "Reseached network interface and environment impacts on protocol performance.",
