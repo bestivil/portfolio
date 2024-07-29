@@ -1,4 +1,3 @@
-/* eslint-disable  no-explicit-any */
 import { ButtonIcon } from "../_components/button-with-icon";
 import {
   CSharpIcon,

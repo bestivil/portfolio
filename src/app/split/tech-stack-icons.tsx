@@ -2,7 +2,11 @@ import React from "react";
 import { JavaIcon, PythonIcon, TypeScriptIcon } from "../_components/icons";
 
 export default function TechIcons() {
-  const icons = [<TypeScriptIcon />, <PythonIcon />, <JavaIcon />];
+  const icons = [
+    React.cloneElement(<TypeScriptIcon />, { key: 1 }),
+    React.cloneElement(<PythonIcon />, { key: 2 }),
+    React.cloneElement(<JavaIcon />, { key: 3 }),
+  ];
   return (
     <div className=" flex min-w-28 items-center justify-center md:pt-24">
       <div className=" flex min-w-[40%] grid-cols-5 flex-row items-center justify-between gap-4 px-6 md:min-w-[60%] md:grid-cols-5 md:gap-16 md:px-8 lg:justify-center">
